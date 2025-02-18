@@ -1,23 +1,22 @@
 {
-    "manifest_version": 3,
-    "name": "Auto Password Filler",
-    "description": "Stores username and password, autofill when the webpage is matched.",
-    "version": "1.0",
-    "permissions": [
-      "storage",
-      "activeTab"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
-    "action": {
-      "default_popup": "popup.html"
+  "manifest_version": 3,
+  "name": "Password Manager",
+  "version": "1.0",
+  "description": "A simple password manager to store and autofill passwords",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
     }
+  ],
+  "action": {
+    "default_popup": "popup.html"
   }
-  
+}

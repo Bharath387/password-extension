@@ -1,27 +1,52 @@
-<!-- popup.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Save Credentials</title>
-  <style>
-    body { width: 300px; font-family: Arial, sans-serif; padding: 10px; }
-    input, button { width: 100%; margin: 10px 0; padding: 8px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <title>Password Manager</title>
+    <style>
+        /* Basic Styles */
+    </style>
 </head>
 <body>
-  <h3>Save Credentials</h3>
-  <label for="url">URL</label>
-  <input type="url" id="url" placeholder="Enter URL" />
-  <label for="username">Username</label>
-  <input type="text" id="username" placeholder="Enter username" />
-  <label for="password">Password</label>
-  <input type="password" id="password" placeholder="Enter password" />
-  <button id="saveButton">Save Credentials</button>
+    <h2>Password Manager</h2>
 
-  <script src="popup.js"></script>
+    <!-- Form to Add/Store Passwords -->
+    <div id="passwordForm">
+        <label for="pageURL">Page URL:</label>
+        <input type="text" id="pageURL" placeholder="Enter page URL">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <button id="savePassword">Save Password</button>
+    </div>
 
+    <hr>
+
+    <!-- Display Stored Password Details -->
+    <input type="password" id="adminId" placeholder="Enter admin User id">
+    <button id="showPassword">Show stored details</button>
+    <div id="storedDetails">
+        <p class="text-bold">Stored Details</p>
+        <div id="storedURL"></div>
+        <div id="storedUsername"></div>
+        <div id="storedPassword"></div>
+       
+    </div>
+
+    <hr>
+
+    <!-- Password Generator Section -->
+    <p class="text-bold">Password Generator</p>
+    <input type="checkbox" id="lengthCheckbox"> 8-16 characters
+    <br>
+    <input type="checkbox" id="specialCheckbox"> Include special characters
+    <br>
+    <button id="generatePassword">Generate Password</button>
+    <div id="generatedPassword" class="text-bold"></div>
+
+    <script src="popup.js"></script>
 </body>
 </html>

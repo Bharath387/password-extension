@@ -13,10 +13,25 @@ body {
   }
   
   input {
-    width: 100%;
+    width: 90%;
     margin: 5px 0;
     padding: 8px;
   }
+
+  input[type="checkbox"] {
+    width: 15px;
+}
+
+#generatedPassword {
+  border: 1px solid;
+  text-align: center;
+  margin-top: 5px;
+  font-size: large;
+}
+
+.text-bold{
+  font-weight: bold;
+}
   
   button {
     width: 100%;
