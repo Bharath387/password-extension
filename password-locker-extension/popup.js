@@ -41,6 +41,7 @@ function showPassword() {
   ul.innerHTML = '';
   console.log(adminId);
   if (adminId == 123456) {
+    isShowPassVisibled = true;
     chrome.storage.local.getKeys(function (data) {
       if (data.length > 0) {
         data.forEach(url => {
@@ -51,7 +52,6 @@ function showPassword() {
              password: ${decryptedPassword}<br>
              url: ${data[url].url}`;
             ul.appendChild(li);
-            isShowPassVisibled = true;
           });
         });
       } else {
