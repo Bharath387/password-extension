@@ -27,6 +27,7 @@ body {
   text-align: center;
   margin-top: 5px;
   font-size: large;
+  width: 80%;
 }
 
 .text-bold{
@@ -56,6 +57,9 @@ body {
   }
   
   li {
-    margin: 5px 0;
+    border: 1px solid green;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   

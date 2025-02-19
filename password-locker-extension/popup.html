@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="popup.css">
     <title>Password Manager</title>
     <style>
@@ -30,6 +31,7 @@
     <button id="showPassword">Show stored details</button>
     <div id="storedDetails">
         <p class="text-bold">Stored Details</p>
+        <ul id="storedData"></ul>
         <div id="storedURL"></div>
         <div id="storedUsername"></div>
         <div id="storedPassword"></div>
@@ -45,8 +47,8 @@
     <input type="checkbox" id="specialCheckbox"> Include special characters
     <br>
     <button id="generatePassword">Generate Password</button>
-    <div id="generatedPassword" class="text-bold"></div>
-
+    <input type="text" id="generatedPassword" class="text-bold" disabled placeholder="Click to copy the text">
+    <i class="fa fa-clipboard" style="font-size:24px" id="copyPassword"></i>
     <script src="popup.js"></script>
 </body>
 </html>
