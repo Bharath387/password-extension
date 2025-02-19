@@ -28,7 +28,7 @@ function savePassword() {
 
   chrome.storage.local.set({ [pageURL]: credentials }, function () {
     alert('Password saved successfully!');
-    if(isShowPassVisibled){
+    if (isShowPassVisibled) {
       showPassword();
     }
   });
@@ -38,13 +38,13 @@ function showPassword() {
   const pageURL = document.getElementById('pageURL').value;
   const adminId = document.getElementById('adminId').value;
   const ul = document.getElementById('storedData');
-  ul.innerHTML='';
+  ul.innerHTML = '';
   console.log(adminId);
   if (adminId == 123456) {
     chrome.storage.local.getKeys(function (data) {
-      data.forEach(url => {
-        chrome.storage.local.get(url, function (data) {
-          if (data[url]) {
+      if (data.length > 0) {
+        data.forEach(url => {
+          chrome.storage.local.get(url, function (data) {
             const decryptedPassword = decryptPassword(data[url].password);
             let li = document.createElement('li');
             li.innerHTML = `username:${data[url].username}<br>
@@ -52,11 +52,11 @@ function showPassword() {
              url: ${data[url].url}`;
             ul.appendChild(li);
             isShowPassVisibled = true;
-          } else {
-            alert('No details stored for this URL.');
-          }
+          });
         });
-      });
+      } else {
+        alert('No details stored for this URL.');
+      }
     })
   } else {
     alert('Not valid user id' + adminId);
