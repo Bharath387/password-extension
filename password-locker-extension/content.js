@@ -7,6 +7,7 @@ chrome.storage.local.get(window.location.href, function (data) {
       if (usernameField && passwordField) {
           usernameField.value = credentials.username;
           passwordField.value = decryptPassword(credentials.password);
+          alert('Autofill completed');
       }
   }
 });
